@@ -1,10 +1,12 @@
-# Ignore everything, except the whitelisted itmes below
-*
+# Ignore everything in the root directory, except the whitelisted items below
+/*
 # Track .gitignore itself
 !.gitignore
+# Track .gitmodules
+!.gitmodules
 # Add git files
 !.gitconfig
 !.gitignore_global
 # Add vim
 !.vimrc
-!.vim/**
+!.vim/
