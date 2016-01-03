@@ -1,0 +1,10 @@
+# Ignore everything, except the whitelisted itmes below
+*
+# Track .gitignore itself
+!.gitignore
+# Add git files
+!.gitconfig
+!.gitignore_global
+# Add vim
+!.vimrc
+!.vim/**
