@@ -1,0 +1,6 @@
+# Ignore everything
+/*
+# except
+!git/
+# Track .gitignore itself
+!.gitignore

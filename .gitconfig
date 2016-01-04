@@ -1,0 +1,26 @@
+[core]
+	editor = vim
+#	excludesfile = ~/.gitignore_global
+[user]
+	name = Jan Henke
+	email = jhenke@hugendubel-digital.de
+	signingkey = 1F6B23CE
+[color]
+	ui = auto
+[push]
+	default = nothing
+[credential]
+	helper = cache --timeout=3600
+[merge]
+	tool = vimdiff
+[mergetool]
+#	prompt = false
+[commit]
+#	gpgsign = true
+[alias]
+	br = branch
+	co = checkout
+	ci = commit
+	fe = fetch
+	rb = rebase
+	st = status
