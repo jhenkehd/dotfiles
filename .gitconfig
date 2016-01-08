@@ -23,4 +23,6 @@
 	ci = commit
 	fe = fetch
 	rb = rebase
+	pl = pull
+	pu = push
 	st = status
