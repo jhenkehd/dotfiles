@@ -25,4 +25,5 @@
 	rb = rebase
 	pl = pull
 	pu = push
+	sm = submodule
 	st = status
