@@ -11,3 +11,5 @@
 # Add vim
 !.vimrc
 !.vim/
+# Custom colours list
+!.colours
