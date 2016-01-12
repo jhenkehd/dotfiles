@@ -1,0 +1,7 @@
+export EDITOR=vim
+export GPGKEY=1F6B23CE
+export SSLKEYLOGFILE=$HOME/tlslog/tls-log.txt
+export JAVA_HOME=/usr/lib/jvm/default-java
+
+export PATH=$HOME/bin:/opt/bin:$PATH
+
