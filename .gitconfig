@@ -24,6 +24,6 @@
 	fe = fetch
 	rb = rebase
 	pl = pull
-	pu = push
+	ps = push
 	sm = submodule
 	st = status
