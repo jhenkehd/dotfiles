@@ -140,9 +140,9 @@ set undolevels=1000
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
-"set shiftround
-"set smarttab
-set noexpandtab
+set shiftround
+set smarttab
+set expandtab
 set copyindent
 set preserveindent
 set autoindent
