@@ -4,6 +4,6 @@ export GPGKEY=1F6B23CE
 export DEBFULLNAME="Jan Henke"
 export DEBEMAIL=jhenke@hugendubel-digital.de
 
-export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-x64
+export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
 export SSLKEYLOGFILE=~/.tlslogs/tlskeylog.log
 
