@@ -11,7 +11,7 @@ autocmd! bufwritepost .vimrc source %
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 
 set pastetoggle=<F2>
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 
 " Mouse and backspace

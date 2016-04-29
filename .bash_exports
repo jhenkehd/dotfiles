@@ -1,8 +1,11 @@
 export PATH=$HOME/bin:/opt/bin:$PATH
 export EDITOR=vim
 export GPGKEY=1F6B23CE
+
 export DEBFULLNAME="Jan Henke"
 export DEBEMAIL=jhenke@hugendubel-digital.de
+
+export HOSTNAME=JHenke-Laptop
 
 export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
 export SSLKEYLOGFILE=~/.tlslogs/tlskeylog.log
