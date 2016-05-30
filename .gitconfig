@@ -1,6 +1,5 @@
 [core]
 	editor = vim
-#	excludesfile = ~/.gitignore_global
 [user]
 	name = Jan Henke
 	email = jhenke@hugendubel-digital.de
@@ -10,13 +9,13 @@
 [push]
 	default = nothing
 [credential]
-	helper = cache --timeout=3600
+#	helper = cache --timeout=3600
 [merge]
 	tool = vimdiff
 [mergetool]
 #	prompt = false
 [commit]
-	gpgsign = true
+#	gpgsign = true
 [alias]
 	br = branch
 	co = checkout
