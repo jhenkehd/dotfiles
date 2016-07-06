@@ -4,7 +4,7 @@ export CXX=/usr/bin/clang++
 export EDITOR=vim
 export GPGKEY=1F6B23CE
 export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
-export PATH=$HOME/bin:/opt/bin:$PATH
+export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export SSLKEYLOGFILE=~/.tlslogs/tlskeylog.log
 
 export DEBFULLNAME="Jan Henke"
