@@ -19,9 +19,17 @@ promptinit
 prompt gentoo
 
 source ~/.local/zsh-git-prompt/zshrc.sh
-RPROMPT='$(git_super_status)'
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+    RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_super_status) $EPS1"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
 
 zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*' hosts off
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 setopt correctall hist_ignore_all_dups hist_ignore_space
@@ -31,6 +39,41 @@ if [[ -x /usr/lib/command-not-found ]] ; then
                 /usr/lib/command-not-found --no-failure-msg -- $1
         }
 fi
+
+# Use vim cli mode
+bindkey '^p' up-history
+bindkey '^n' down-history
+
+# backspace and ^h working even after
+# returning from command mode
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+
+# ctrl-w removed word backwards
+bindkey '^w' backward-kill-word
+
+# ctrl-r starts searching history backward
+bindkey '^r' history-incremental-search-backward
+
+# delete from cursor to beginning of line
+bindkey '^u' backward-kill-line
+# delete from cursor to end of line
+bindkey '^k' kill-line
+# delete next word
+bindkey '^[d' kill-word
+# uppercase word starting from cursor
+bindkey '^[u' up-case-word
+# go to beginning of line (^A is used by tmux)
+bindkey '^b' beginning-of-line
+# go to end of line
+bindkey '^e' end-of-line
+
+bindkey "\e[1~" beginning-of-line # Home
+bindkey "\e[7~" beginning-of-line # Home rxvt
+bindkey "\e[2~" overwrite-mode    # Ins
+bindkey "\e[3~" delete-char       # Delete
+bindkey "\e[4~" end-of-line       # End
+bindkey "\e[8~" end-of-line       # End rxvt
 
 ## Alias Definitions
 # enable color support of ls and also add handy aliases
@@ -46,6 +89,12 @@ alias egrep='egrep --color=auto'
 alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# cd Aliases
+alias ..='cd ..'
+alias ....='cd ../..'
+alias ......='cd ../../..'
+alias ........='cd ../../../..'
 
 # Allgemeine Aliases für häufig genutzte Anwendungen
 alias cpa='cp -a'
