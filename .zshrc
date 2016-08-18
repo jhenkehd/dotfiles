@@ -26,6 +26,12 @@ zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 setopt correctall hist_ignore_all_dups hist_ignore_space
 
+if [[ -x /usr/lib/command-not-found ]] ; then
+        function command_not_found_handler() {
+                /usr/lib/command-not-found --no-failure-msg -- $1
+        }
+fi
+
 ## Alias Definitions
 # enable color support of ls and also add handy aliases
 alias ls='ls --color=auto'
