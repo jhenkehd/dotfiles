@@ -29,7 +29,6 @@ zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion:*' hosts off
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 setopt correctall hist_ignore_all_dups hist_ignore_space
@@ -54,6 +53,9 @@ bindkey '^w' backward-kill-word
 
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
+
+# alt-. inserts last word from previous command
+bindkey '\e.' insert-last-word
 
 # delete from cursor to beginning of line
 bindkey '^u' backward-kill-line
