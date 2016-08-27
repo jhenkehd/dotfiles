@@ -8,7 +8,7 @@
 [color]
 	ui = auto
 [push]
-	default = nothing
+#	default = nothing
 [credential]
 #	helper = cache --timeout=3600
 [merge]
