@@ -16,27 +16,44 @@ compinit
 # zsh Customization
 autoload -U promptinit
 promptinit
-prompt gentoo
+# Gentoo default prompt
+# this is the sequence used by Gentoo, define here explicitly, so it works on
+# non-Gentoo systems too
+PROMPT="%B%F{green}%n@%m%k %B%F{blue}%1~ %# %b%f%k"
 
-source ~/.local/zsh-git-prompt/zshrc.sh
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
-    RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_super_status) $EPS1"
-    zle reset-prompt
-}
+zstyle ':completion::complete:*' use-cache 1
+#zstyle ':completion:*' hosts off
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+setopt correctall hist_ignore_all_dups hist_ignore_space
+
+#setup prompt
+GIT_PROMPT_SOURCE=~/.zsh-git-prompt/zshrc.sh
+
+if [[ -a $GIT_PROMPT_SOURCE ]]; then
+	source $GIT_PROMPT_SOURCE
+	function zle-line-init zle-keymap-select {
+		VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+		RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_super_status) $EPS1"
+		zle reset-prompt
+	}
+else
+	function zle-line-init zle-keymap-select {
+		VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+		RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+		zle reset-prompt
+	}
+fi
+unset $GIT_PROMPT_SOURCE
+
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
 # print current working directory to terminal title
 precmd() {
-	print -Pn "\e]0;$PWD\a"
+	print -Pn "\e]0;%n@%m:%~\a"
 }
-
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
-setopt correctall hist_ignore_all_dups hist_ignore_space
 
 if [[ -x /usr/lib/command-not-found ]] ; then
         function command_not_found_handler() {
