@@ -18,8 +18,8 @@ autoload -U promptinit
 promptinit
 # Gentoo default prompt
 # this is the sequence used by Gentoo, define here explicitly, so it works on
-# non-Gentoo systems too
-PROMPT="%B%F{green}%n@%m%k %B%F{blue}%1~ %# %b%f%k"
+# non-Gentoo systems too, use conditional for root %(# . . )
+PROMPT="%(#.%B%F{red}%m%k %B%F{blue}%1~ %# %b%f%k.%B%F{green}%n@%m%k %B%F{blue}%1~ %# %b%f%k)"
 
 zstyle ':completion::complete:*' use-cache 1
 #zstyle ':completion:*' hosts off
