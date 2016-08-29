@@ -31,18 +31,18 @@ setopt correctall hist_ignore_all_dups hist_ignore_space
 GIT_PROMPT_SOURCE=~/.zsh-git-prompt/zshrc.sh
 
 if [[ -a $GIT_PROMPT_SOURCE ]]; then
-	source $GIT_PROMPT_SOURCE
-	function zle-line-init zle-keymap-select {
-		VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
-		RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_super_status) $EPS1"
-		zle reset-prompt
-	}
+    source $GIT_PROMPT_SOURCE
+    function zle-line-init zle-keymap-select {
+        VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+        RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_super_status) $EPS1"
+        zle reset-prompt
+    }
 else
-	function zle-line-init zle-keymap-select {
-		VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
-		RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-		zle reset-prompt
-	}
+    function zle-line-init zle-keymap-select {
+        VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+        RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+        zle reset-prompt
+    }
 fi
 unset $GIT_PROMPT_SOURCE
 
@@ -52,7 +52,7 @@ export KEYTIMEOUT=1
 
 # print current working directory to terminal title
 precmd() {
-	print -Pn "\e]0;%n@%m:%~\a"
+    print -Pn "\e]0;%n@%m:%~\a"
 }
 
 if [[ -x /usr/lib/command-not-found ]] ; then
