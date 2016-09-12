@@ -129,17 +129,22 @@ alias gitke="gitk --branches=\*ebook\* --remotes=\*/\*ebook\*"
 alias gitkm="gitk --branches=\*master\* --remotes=\*/\*master\*"
 
 ## Exports
-export ASM=/usr/bin/clang
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+# non-root exports
+if [[ $UID != 0 || $EUID != 0 ]]; then
+	export ASM=/usr/bin/clang
+	export CC=/usr/bin/clang
+	export CXX=/usr/bin/clang++
+
+	export GPGKEY=1F6B23CE
+
+	export DEBFULLNAME="Jan Henke"
+	export DEBEMAIL=jhenke@hugendubel-digital.de
+
+	export SSLKEYLOGFILE=~/.tlslogs/tlskeylog.log
+fi
+
 export EDITOR=vim
-export GPGKEY=1F6B23CE
+export HOSTNAME=JHenke-Laptop
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 #export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
-export SSLKEYLOGFILE=~/.tlslogs/tlskeylog.log
-
-export DEBFULLNAME="Jan Henke"
-export DEBEMAIL=jhenke@hugendubel-digital.de
-
-export HOSTNAME=JHenke-Laptop
