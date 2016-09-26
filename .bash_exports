@@ -1,7 +1,7 @@
 export ASM=/usr/bin/clang
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
-export EDITOR=vim
+export EDITOR=/usr/bin/vim
 export GPGKEY=1F6B23CE
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 #export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64

@@ -143,7 +143,7 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 	export SSLKEYLOGFILE=~/.tlslogs/tlskeylog.log
 fi
 
-export EDITOR=vim
+export EDITOR=/usr/bin/vim
 export HOSTNAME=JHenke-Laptop
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 #export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
