@@ -70,7 +70,7 @@ vnoremap > >gv  " better indentation
 
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=232 guibg=232
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=232 guibg=#080808
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
