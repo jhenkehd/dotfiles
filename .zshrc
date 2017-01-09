@@ -2,7 +2,7 @@
 HISTFILE=~/.zhistory
 HISTSIZE=1000
 SAVEHIST=2000
-setopt appendhistory autocd extendedglob nomatch notify
+setopt appendhistory extendedglob nomatch notify
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -33,7 +33,7 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 setopt correctall hist_ignore_all_dups hist_ignore_space
 
 #setup prompt
-GIT_PROMPT_SOURCE=~/.zsh-git-prompt/zshrc.sh
+GIT_PROMPT_SOURCE=~/.zsh/git-prompt/zshrc.sh
 
 if [[ -a $GIT_PROMPT_SOURCE ]]; then
     source $GIT_PROMPT_SOURCE
@@ -149,7 +149,6 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 fi
 
 export EDITOR=/usr/bin/vim
-export HOSTNAME=JHenke-Laptop
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-#export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
