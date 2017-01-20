@@ -26,6 +26,7 @@ if [[ -a ~/.zsh/completion ]]; then
     fpath=(~/.zsh/completion $fpath)
 fi
 
+zstyle ':completion:*' special-dirs true # complete .. as parent directory
 zstyle ':completion::complete:*' use-cache 1
 #zstyle ':completion:*' hosts off
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -120,10 +121,10 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # cd Aliases
-alias ..='cd ..'
-alias ....='cd ../..'
-alias ......='cd ../../..'
-alias ........='cd ../../../..'
+#alias ..='cd ..'
+#alias ....='cd ../..'
+#alias ......='cd ../../..'
+#alias ........='cd ../../../..'
 
 # Allgemeine Aliases für häufig genutzte Anwendungen
 alias cpa='cp -a'
