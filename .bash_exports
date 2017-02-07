@@ -13,3 +13,5 @@ export DEBEMAIL=jhenke@hugendubel-digital.de
 
 export HOSTNAME=JHenke-Laptop
 
+export TNS_ADMIN=/home/jhenke/TnsAdmin
+export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1

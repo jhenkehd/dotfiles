@@ -146,10 +146,12 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 	export DEBFULLNAME="Jan Henke"
 	export DEBEMAIL=jhenke@hugendubel-digital.de
 
-	export SSLKEYLOGFILE=~/.tlslogs/tlskeylog.log
+	export SSLKEYLOGFILE=$HOME/.tlslogs/tlskeylog.log
 fi
 
 export EDITOR=/usr/bin/vim
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
+export TNS_ADMIN=/home/jhenke/TnsAdmin
+export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
