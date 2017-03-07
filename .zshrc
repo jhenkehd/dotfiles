@@ -70,21 +70,16 @@ fi
 # Use vim cli mode
 bindkey '^p' up-history
 bindkey '^n' down-history
-
 # backspace and ^h working even after
 # returning from command mode
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
-
 # ctrl-w removed word backwards
 bindkey '^w' backward-kill-word
-
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
-
 # alt-. inserts last word from previous command
 bindkey '\e.' insert-last-word
-
 # delete from cursor to beginning of line
 bindkey '^u' backward-kill-line
 # delete from cursor to end of line
@@ -98,12 +93,14 @@ bindkey '^b' beginning-of-line
 # go to end of line
 bindkey '^e' end-of-line
 
-bindkey "\e[1~" beginning-of-line # Home
-bindkey "\e[7~" beginning-of-line # Home rxvt
-bindkey "\e[2~" overwrite-mode    # Ins
-bindkey "\e[3~" delete-char       # Delete
-bindkey "\e[4~" end-of-line       # End
-bindkey "\e[8~" end-of-line       # End rxvt
+bindkey "^[[H"  beginning-of-line # Home
+bindkey "^[[2~" overwrite-mode    # Ins
+bindkey "^[[3~" delete-char       # Delete
+bindkey "^[[F"  end-of-line       # End
+
+# Move back/forward one word with CTRL+arrow key
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 ## Alias Definitions
 # enable color support of ls and also add handy aliases
