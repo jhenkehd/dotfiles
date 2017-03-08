@@ -117,16 +117,16 @@ alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# cd Aliases
-#alias ..='cd ..'
-#alias ....='cd ../..'
-#alias ......='cd ../../..'
-#alias ........='cd ../../../..'
-
-# Allgemeine Aliases für häufig genutzte Anwendungen
+# Allgemeine Aliase für häufig genutzte Anwendungen
 alias cpa='cp -a'
 alias batterystatus='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
+# Gentoo Aliase
+alias grubconfig='grub-mkconfig -o /boot/grub/grub.cfg'
+alias emergesync='sudo emerge --sync && sudo eix-update && emergeupdate'
+alias emergeupdate='sudo emerge --oneshot --ask --deep --newuse --update --keep-going --with-bdeps=y @world'
+
+# Gitk Aliase
 alias gitka="gitk --all"
 alias gitke="gitk --branches=\*ebook\* --remotes=\*/\*ebook\*"
 alias gitkm="gitk --branches=\*master\* --remotes=\*/\*master\*"
@@ -147,7 +147,6 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 fi
 
 export EDITOR=/usr/bin/vim
-#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
