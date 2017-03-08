@@ -61,12 +61,6 @@ precmd() {
     print -Pn "\e]0;%n@%m:%~\a"
 }
 
-if [[ -x /usr/lib/command-not-found ]] ; then
-        function command_not_found_handler() {
-                /usr/lib/command-not-found --no-failure-msg -- $1
-        }
-fi
-
 # Use vim cli mode
 bindkey '^p' up-history
 bindkey '^n' down-history
