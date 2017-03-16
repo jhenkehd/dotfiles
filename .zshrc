@@ -61,6 +61,12 @@ precmd() {
     print -Pn "\e]0;%n@%m:%~\a"
 }
 
+# use GNOME keyring if running
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
 # Use vim cli mode
 bindkey '^p' up-history
 bindkey '^n' down-history
@@ -87,10 +93,10 @@ bindkey '^b' beginning-of-line
 # go to end of line
 bindkey '^e' end-of-line
 
-bindkey "^[[H"  beginning-of-line # Home
+bindkey "^[OH"  beginning-of-line # Home
 bindkey "^[[2~" overwrite-mode    # Ins
 bindkey "^[[3~" delete-char       # Delete
-bindkey "^[[F"  end-of-line       # End
+bindkey "^[OF"  end-of-line       # End
 
 # Move back/forward one word with CTRL+arrow key
 bindkey "^[[1;5C" forward-word
@@ -141,7 +147,7 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 fi
 
 export EDITOR=/usr/bin/vim
-export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
+export JAVA_HOME=/usr/lib/jvm/oracle-jdk-bin-1.8
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
