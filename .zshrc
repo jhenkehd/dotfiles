@@ -127,7 +127,6 @@ alias emerge-update='sudo emerge --oneshot --ask --deep --newuse --update --keep
 
 # Gitk Aliase
 alias gitka="gitk --all"
-alias gitke="gitk --branches=\*ebook\* --remotes=\*/\*ebook\*"
 alias gitkm="gitk --branches=\*master\* --remotes=\*/\*master\*"
 
 ## Exports
