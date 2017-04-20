@@ -32,8 +32,12 @@ zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 setopt correctall hist_ignore_all_dups hist_ignore_space
+# to disable autocorrection use: unsetopt correct
+# but for now we just whitelist common annoying correction suggestions
+alias vim='nocorrect vim'
+alias fin='nocorrect fin'
 
-#setup prompt
+# setup prompt
 GIT_PROMPT_SOURCE=~/.zsh/git-prompt/zshrc.sh
 
 if [[ -a $GIT_PROMPT_SOURCE ]]; then
