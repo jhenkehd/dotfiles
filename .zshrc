@@ -64,11 +64,8 @@ precmd() {
     print -Pn "\e]0;%n@%m:%~\a"
 }
 
-# use GNOME keyring if running
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
+# in new terminal (tabs), make sure to change to the previous working directory
+. /etc/profile.d/vte-2.91.sh
 
 # Use vim cli mode
 bindkey '^p' up-history
