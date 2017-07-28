@@ -145,7 +145,6 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 fi
 
 export EDITOR=/usr/bin/vim
-export JAVA_HOME=/usr/lib/jvm/oracle-jdk-bin-1.8
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1

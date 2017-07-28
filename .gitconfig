@@ -8,16 +8,9 @@
 [color]
 	ui = auto
 [push]
-#	default = nothing
     default = simple
-[credential]
-#	helper = cache --timeout=3600
 [merge]
 	tool = vimdiff
-[mergetool]
-#	prompt = false
-[commit]
-#	gpgsign = true
 [log]
 	showSignature = true
 [alias]
@@ -30,3 +23,11 @@
 	ps = push
 	sm = submodule
 	st = status
+[branch "ebook-master"]
+	rebase = preserve
+[branch "ebook-dev"]
+	rebase = preserve
+[branch "ebook-fin"]
+	rebase = preserve
+[branch "ebook-live"]
+	rebase = preserve
