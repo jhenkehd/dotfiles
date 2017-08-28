@@ -53,7 +53,7 @@ else
         zle reset-prompt
     }
 fi
-unset $GIT_PROMPT_SOURCE
+#unset $GIT_PROMPT_SOURCE
 
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -132,9 +132,9 @@ alias gitkm="gitk --branches=\*master\* --remotes=\*/\*master\*"
 ## Exports
 # non-root exports
 if [[ $UID != 0 || $EUID != 0 ]]; then
-	export ASM=/usr/bin/clang
-	export CC=/usr/bin/clang
-	export CXX=/usr/bin/clang++
+	export ASM=clang
+	export CC=clang
+	export CXX=clang++
 
 	export GPGKEY=1F6B23CE
 
