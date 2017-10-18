@@ -31,3 +31,5 @@
 	rebase = preserve
 [branch "ebook-live"]
 	rebase = preserve
+[commit]
+	gpgsign = true
