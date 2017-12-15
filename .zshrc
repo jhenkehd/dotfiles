@@ -123,7 +123,7 @@ alias batterystatus='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
 # Gentoo Aliase
 alias grubconfig='grub-mkconfig -o /boot/grub/grub.cfg'
-alias emerge-update='emerge --oneshot --ask ---keep-going --update --newuse --deep --with-bdeps=y @world'
+alias emerge-update='emerge --oneshot --ask --keep-going --update --newuse --deep --with-bdeps=y @world'
 
 # Gitk Aliase
 alias gitka="gitk --all"
