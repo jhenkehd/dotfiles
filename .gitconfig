@@ -12,7 +12,7 @@
 [merge]
 	tool = vimdiff
 [log]
-	showSignature = true
+#	showSignature = true
 [alias]
 	br = branch
 	co = checkout

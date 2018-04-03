@@ -121,10 +121,6 @@ alias l='ls -CF'
 alias cpa='cp -a'
 alias batterystatus='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
-# Gentoo Aliase
-alias grubconfig='grub-mkconfig -o /boot/grub/grub.cfg'
-alias emerge-update='emerge --oneshot --ask --keep-going --update --newuse --deep --with-bdeps=y @world'
-
 # Gitk Aliase
 alias gitka="gitk --all"
 alias gitkm="gitk --branches=\*master\* --remotes=\*/\*master\*"
@@ -148,3 +144,9 @@ export EDITOR=/usr/bin/vim
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google/cloud-sdk/completion.zsh.inc' ]; then source '/opt/google/cloud-sdk/completion.zsh.inc'; fi
