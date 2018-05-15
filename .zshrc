@@ -145,6 +145,9 @@ export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
 
+# workaround for gentoo bug 651644
+export TERM=xterm-color
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-sdk/path.zsh.inc'; fi
 
