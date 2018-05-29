@@ -25,11 +25,15 @@
 	st = status
 [branch "ebook-master"]
 	rebase = preserve
-[branch "ebook-dev"]
-	rebase = preserve
 [branch "ebook-fin"]
 	rebase = preserve
 [branch "ebook-live"]
+	rebase = preserve
+[branch "master"]
+	rebase = preserve
+[branch "fin"]
+	rebase = preserve
+[branch "live"]
 	rebase = preserve
 [commit]
 	gpgsign = true
