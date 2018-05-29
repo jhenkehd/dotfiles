@@ -133,11 +133,6 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 	export CXX=clang++
 
 	export GPGKEY=1F6B23CE
-
-	export DEBFULLNAME="Jan Henke"
-	export DEBEMAIL=jhenke@hugendubel-digital.de
-
-	export SSLKEYLOGFILE=$HOME/.tlslogs/tlskeylog.log
 fi
 
 export EDITOR=/usr/bin/vim
@@ -147,6 +142,10 @@ export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
 
 # workaround for gentoo bug 651644
 export TERM=xterm-color
+
+# Gradle
+export GRADLE_HOME=/opt/gradle/gradle-4.7
+export PATH=$PATH:/opt/gradle/gradle-4.7/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-sdk/path.zsh.inc'; fi
