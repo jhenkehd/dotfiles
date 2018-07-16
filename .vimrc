@@ -22,7 +22,7 @@ set bs=2     " make backspace behave like normal again
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
-let mapleader = ","
+let mapleader = "\<Space>"
 
 
 " Bind nohl
@@ -34,9 +34,9 @@ inoremap <C-n> :nohl<CR>
 
 
 " Quicksave command
-noremap <C-Z> :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
+noremap <Leader>z :update<CR>
+vnoremap <Leader>z <C-C>:update<CR>
+inoremap <Leader>z <C-O>:update<CR>
 
 
 " Quick quit command
