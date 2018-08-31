@@ -140,12 +140,9 @@ export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
 
-# workaround for gentoo bug 651644
-export TERM=xterm-color
-
 # Gradle
-export GRADLE_HOME=/opt/gradle/gradle-4.8
-export PATH=$PATH:/opt/gradle/gradle-4.8/bin
+export GRADLE_HOME=/opt/gradle/gradle-4.9
+export PATH=$PATH:/opt/gradle/gradle-4.9/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-sdk/path.zsh.inc'; fi
