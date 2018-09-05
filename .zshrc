@@ -141,8 +141,8 @@ export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
 
 # Gradle
-export GRADLE_HOME=/opt/gradle/gradle-4.9
-export PATH=$PATH:/opt/gradle/gradle-4.9/bin
+export GRADLE_HOME=/opt/gradle/gradle-4.10
+export PATH=$PATH:/opt/gradle/gradle-4.10/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-sdk/path.zsh.inc'; fi
