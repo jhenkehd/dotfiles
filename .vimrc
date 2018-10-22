@@ -22,8 +22,15 @@ set bs=2     " make backspace behave like normal again
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
-let mapleader = "\<Space>"
+"let mapleader = "\<Space>"
 
+" Map some keys from the US keyboard to convient keys on the German keyboard
+map ü <C-]>
+map ö [
+map ä ]
+map Ö {
+map Ä }
+map ß /
 
 " Bind nohl
 " Removes highlight of your last search
