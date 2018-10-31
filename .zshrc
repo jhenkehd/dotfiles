@@ -64,8 +64,10 @@ precmd() {
     print -Pn "\e]0;%n@%m:%~\a"
 }
 
-# in new terminal (tabs), make sure to change to the previous working directory
-. /etc/profile.d/vte-2.91.sh
+# preserve current working directory in new tabs
+if [[ -a /etc/profile.d/vte-2.91.sh ]]; then
+	. /etc/profile.d/vte-2.91.sh
+fi
 
 # Use vim cli mode
 bindkey '^p' up-history
@@ -93,10 +95,10 @@ bindkey '^b' beginning-of-line
 # go to end of line
 bindkey '^e' end-of-line
 
-bindkey "^[OH"  beginning-of-line # Home
-bindkey "^[[2~" overwrite-mode    # Ins
-bindkey "^[[3~" delete-char       # Delete
-bindkey "^[OF"  end-of-line       # End
+bindkey "^[[H"	beginning-of-line # Home
+bindkey "^[[2~" overwrite-mode	  # Ins
+bindkey "^[[3~" delete-char		  # Delete
+bindkey "^[[F"	end-of-line		  # End
 
 # Move back/forward one word with CTRL+arrow key
 bindkey "^[[1;5C" forward-word
@@ -118,7 +120,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Allgemeine Aliase für häufig genutzte Anwendungen
-alias cpa='cp -a'
 alias batterystatus='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
 # Gitk Aliase
@@ -143,6 +144,10 @@ export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
 # Gradle
 export GRADLE_HOME=/opt/gradle/gradle-4.10.2
 export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
+
+function metar() {
+		curl -s https://aviationweather.gov/adds/dataserver_current/httpparam\?dataSource\=metars\&requestType\=retrieve\&format\=xml\&stationString\=$1\&hoursBeforeNow\=2\&mostRecent\=true | grep raw_text | awk		  -F">" '{print $2}' | awk -F"<" '{print $1}'
+}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-sdk/path.zsh.inc'; fi
