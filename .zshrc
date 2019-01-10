@@ -141,10 +141,6 @@ export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
 
-# Gradle
-export GRADLE_HOME=/opt/gradle/gradle-4.10.2
-export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
-
 function metar() {
 		curl -s https://aviationweather.gov/adds/dataserver_current/httpparam\?dataSource\=metars\&requestType\=retrieve\&format\=xml\&stationString\=$1\&hoursBeforeNow\=2\&mostRecent\=true | grep raw_text | awk		  -F">" '{print $2}' | awk -F"<" '{print $1}'
 }
