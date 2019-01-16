@@ -136,7 +136,6 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 	export GPGKEY=1F6B23CE
 fi
 
-export EDITOR=/usr/bin/vim
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/home/jhenke/TnsAdmin
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
