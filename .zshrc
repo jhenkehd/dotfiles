@@ -149,3 +149,6 @@ if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-s
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/opt/google/cloud-sdk/completion.zsh.inc' ]; then source '/opt/google/cloud-sdk/completion.zsh.inc'; fi
+
+# enable shell command completion for aws
+if [ -f "$HOME/.local/bin/aws_zsh_completer.sh" ]; then source "$HOME/.local/bin/aws_zsh_completer.sh"; fi
