@@ -23,6 +23,7 @@
 	ps = push
 	sm = submodule
 	st = status
+	wt = worktree
 [branch "ebook-master"]
 	rebase = preserve
 [branch "ebook-fin"]
