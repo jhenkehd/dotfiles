@@ -7,7 +7,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/jan/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -151,4 +151,4 @@ if [ -f '/opt/google/cloud-sdk/path.zsh.inc' ]; then source '/opt/google/cloud-s
 if [ -f '/opt/google/cloud-sdk/completion.zsh.inc' ]; then source '/opt/google/cloud-sdk/completion.zsh.inc'; fi
 
 # enable shell command completion for aws
-if [ -f "$HOME/.local/bin/aws_zsh_completer.sh" ]; then source "$HOME/.local/bin/aws_zsh_completer.sh"; fi
+if [ -f "/usr/share/zsh/site-functions/_aws" ]; then source "/usr/share/zsh/site-functions/_aws"; fi
