@@ -137,7 +137,7 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 fi
 
 export PATH=$HOME/.local/bin:/opt/bin:$PATH
-export TNS_ADMIN=/home/jhenke/TnsAdmin
+export TNS_ADMIN=/var/opt/oracle
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
 
 function metar() {
