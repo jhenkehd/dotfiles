@@ -21,7 +21,7 @@ promptinit
 # non-Gentoo systems too, use conditional for root %(# . . )
 PROMPT="%(#.%B%F{red}%m%k %B%F{blue}%1~ %# %b%f%k.%B%F{green}%n@%m%k %B%F{blue}%1~ %# %b%f%k)"
 
-# Load customer completions
+# Load custom completions
 if [[ -a ~/.zsh/completion ]]; then
     fpath=(~/.zsh/completion $fpath)
 fi

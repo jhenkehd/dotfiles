@@ -21,8 +21,10 @@
 	rb = rebase
 	pl = pull
 	ps = push
+	rs = restore
 	sm = submodule
 	st = status
+	sw = switch
 	wt = worktree
 [branch "ebook-master"]
 	rebase = preserve
