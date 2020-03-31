@@ -167,3 +167,6 @@ if type compdef &>/dev/null; then
   compdef _npo_completion npo
 fi
 ###-end-npo-completion-###
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
