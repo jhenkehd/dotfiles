@@ -136,9 +136,11 @@ if [[ $UID != 0 || $EUID != 0 ]]; then
 	export GPGKEY=1F6B23CE
 fi
 
-export PATH=$HOME/.local/bin:/opt/bin:$PATH
 export TNS_ADMIN=/var/opt/oracle
 export INSTANTCLIENT=$TNS_ADMIN/instantclient_12_1
+
+export GROOVY_HOME=/opt/groovy-3.0.2
+export PATH=$HOME/.local/bin:/opt/bin:$GROOVY_HOME/bin:$PATH
 
 function metar() {
 		curl -s https://aviationweather.gov/adds/dataserver_current/httpparam\?dataSource\=metars\&requestType\=retrieve\&format\=xml\&stationString\=$1\&hoursBeforeNow\=2\&mostRecent\=true | grep raw_text | awk		  -F">" '{print $2}' | awk -F"<" '{print $1}'
@@ -152,3 +154,16 @@ if [ -f '/opt/google/cloud-sdk/completion.zsh.inc' ]; then source '/opt/google/c
 
 # enable shell command completion for aws
 if [ -f "/usr/share/zsh/site-functions/_aws" ]; then source "/usr/share/zsh/site-functions/_aws"; fi
+
+###-begin-npo-completion-###
+if type compdef &>/dev/null; then
+  _npo_completion () {
+    local reply
+    local si=$IFS
+    IFS=$'\n' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" npo completion -- "${words[@]}"))
+    IFS=$si
+    _describe 'values' reply
+  }
+  compdef _npo_completion npo
+fi
+###-end-npo-completion-###
