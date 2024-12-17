@@ -26,17 +26,12 @@
 	st = status
 	sw = switch
 	wt = worktree
-[branch "ebook-master"]
-	rebase = preserve
-[branch "ebook-fin"]
-	rebase = preserve
-[branch "ebook-live"]
-	rebase = preserve
 [branch "master"]
-	rebase = preserve
-[branch "fin"]
-	rebase = preserve
-[branch "live"]
-	rebase = preserve
+	rebase = merges
 [commit]
 	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
